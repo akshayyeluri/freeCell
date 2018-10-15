@@ -192,7 +192,7 @@ def loadFile(filename, game=FreeCell(False)):
     Will load a full freecell game from a filename
     '''
     with open(filename, 'r') as file:
-        str = ''.join(file.readlines())
+        str = ''.join([line for line in file if line[0] != '#'])
     load(game, str)
     return game
 
