@@ -143,7 +143,7 @@ Solver:
 	the cycles once initially, and update with each move.
 
 
-Ok that’s all, thank you so much for reading through this and grading my assignment,
+Ok that’s all, thank you so much for reading through this,
 
 Yours truly,
 Akshay
