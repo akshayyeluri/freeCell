@@ -585,13 +585,13 @@ if __name__ == '__main__':
     
     i = 1
     while i < len(sys.argv):
-        if sys.argv[i] = '-s':
+        if sys.argv[i] == '-s':
             i += 1
             startFile = sys.argv[i]
-        elif sys.argv[i] = '-g':
+        elif sys.argv[i] == '-g':
             i += 1
             gameFile = sys.argv[i]
-        elif sys.argv[i] = '-m':
+        elif sys.argv[i] == '-m':
             i += 1
             moveFile = sys.argv[i]
         i += 1

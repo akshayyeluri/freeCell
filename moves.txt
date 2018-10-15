@@ -1,86 +1,82 @@
 cx 2
-cc 2 3
-cx 2
 cx 7
+cx 4
+cx 2
+cc 6 3
+xf 0
+cx 5
+cx 1
+cf 4
+xc 1 2
+cx 5
+cc 6 4
+cc 5 7
+cc 1 7
+cc 5 4
+cc 5 1
+xc 2 5
+cc 3 5 2
+cx 3
+cf 3
+xc 3 1
+cx 2
+cc 2 5
+xc 2 2
+cx 1
+xc 3 5
 cx 0
 cc 0 1
-cc 0 4
-cc 7 0
-cc 7 0
-xc 3 7
-cx 4
-xc 2 1
-cx 4
+cf 0
 cf 6
-xc 1 7
-cx 6
-xc 0 7
-cx 6
-cf 6
-cc 3 6
-cc 4 1
-cc 3 4
-cc 3 0
-cc 3 0
-cc 3 5
-cc 6 4
-xc 0 6
-cc 3 5
-cc 2 3
-cc 1 5 2
+cc 0 1
+cc 0 3
+cc 5 0
+cf 5
+xc 3 3
+cc 0 2 2
+cx 4
+cc 0 6
+xc 2 0
+cx 1
+cf 1
+xc 2 0
 cc 1 6 2
+cx 4
+cc 1 0
 cf 1
-cx 1
-cf 1
-cc 0 2
-cf 0
-xc 2 1
-cc 5 6 2
-cf 5
-cx 1
-cc 0 7
-cf 0
-xc 2 1
+xc 2 4
+cc 2 5 2
+cc 6 1
 cx 2
+cf 2
+cc 6 7
 cc 2 7
-xc 3 1
-cx 5
-cf 5
-cf 5
-xc 0 2
+xc 2 2
+cc 1 6 2
+cc 3 1
+cc 5 2 2
 cx 7
 cf 7
-cc 1 5
-cc 3 5
-cc 3 1
-cc 2 5
-cc 2 1
-xc 1 2
-cc 4 2 2
-cx 4
-cc 4 7
-cc 7 4
-xc 0 4
-cc 1 3 2
-cx 1
-xc 2 4
-cx 0
-cc 0 2
-cf 0
-cf 6
-xc 2 0
-cx 4
-cf 4
-cc 5 3
-cf 5
-cc 7 0
-cc 4 0
-cc 1 4
+cc 1 3
 cf 1
-xf 0
-cc 3 5 2
-cc 7 2 2
+xc 3 1
+cc 3 1 2
+cc 5 1 2
+cc 3 4
+cx 3
+xc 1 3
+cc 4 3 2
+cx 4
+cx 4
+cc 2 1 2
+cc 5 4
+xc 1 5
+cx 4
+xc 3 5
+cc 7 4 2
+cx 2
+xc 0 2
 cx 7
-cf 5
-cf 2
-cf 5
+cc 7 2
+cf 0
+cc 6 0 3
