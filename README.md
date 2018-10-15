@@ -33,6 +33,12 @@ GUI Cool Stuff:
 	variable step amount to a different integer. The larger the int, the slower the
 	cards will move.
 
+4) A really cool workflow -- You start up the player, and see a game. Enter save to save
+the game as a file, and pass that filename as a command line argument preceded
+by the '-s' flag to the solver to
+generate a move list to beat the game. Then, go back to the player, and enter execute,
+select this move file to watch yourself win the game!
+
 Solver Cool Stuff:
 1) Output files — Again, as the solver runs, it typically outputs two files — a game file 
 	and a move list file. by loading the first and executing the second, you can see
@@ -40,7 +46,7 @@ Solver Cool Stuff:
 
 2) Command Line arguments — You can further specify the names for the output files by 	
 	using command line args. Simply saying $ python3 FreeCellSolver.py will solve a
-	game, but by saying $ python3 FreeCellSolver.py game37 moveLst37 game37.txt , you 
+	game, but by saying $ python3 FreeCellSolver.py -g game37 -m moveLst37 -s game37.txt , you 
 	would load game37.txt (which is hopefully a file in the right form (see save in 
 	GameFunctions for details), save another copy as game37, try and solve it, and 
 	print the moves to a file called moveLst37.

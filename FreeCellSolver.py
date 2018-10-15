@@ -583,13 +583,18 @@ if __name__ == '__main__':
     cap = 2000000
     
     
-    if len(sys.argv) > 1:
-        try:
-            gameFile = sys.argv[1]
-            moveFile = sys.argv[2]
-            startFile = sys.argv[3]
-        except IndexError:
-            pass
+    i = 1
+    while i < len(sys.argv):
+        if sys.argv[i] = '-s':
+            i += 1
+            startFile = sys.argv[i]
+        elif sys.argv[i] = '-g':
+            i += 1
+            gameFile = sys.argv[i]
+        elif sys.argv[i] = '-m':
+            i += 1
+            moveFile = sys.argv[i]
+        i += 1
         
     changeSettings = False
     if changeSettings:

@@ -1,11 +1,11 @@
 None None None None 
 None None None None 
-7s 5c 3h 6h 10s 4h Qs 
-2d 5h 4d 10c 6s 9d Kc 
-9s 4c Ah 9h Qc As 7h 
-Kd 8h Qd 3c 2s 2c Jc 
-3s 9c Jh 8d 2h 5d 
-3d 6c Ac 10h 8s 7c 
-4s Ad Qh 6d 5s Jd 
-8c Js 7d 10d Kh Ks 
+Kc 2h 9d Qd 8d 4d Js 
+Qs 9s 10h 4h 9h 6h 6s 
+8c Ac 3d Jc 8s 5s 4s 
+3c Ks Ad 2d Kh Ah 7c 
+2s 5c 10d Qh Kd 7d 
+10s 8h 6d 10c Qc 2c 
+5h 3s As 9c 6c 7s 
+7h 5d 3h Jd Jh 4c 
 
