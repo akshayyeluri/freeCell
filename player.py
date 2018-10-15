@@ -267,6 +267,8 @@ def enter():
                 # solver does not automove, don't want to mess up the synching
             else:
                 for line in file:
+                    if line.strip()[0] = '#':
+                        continue
                     # execute a game (make every move in a list of moves, seq
                     # uentially
                     command = line.strip().split()
