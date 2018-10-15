@@ -1,3 +1,4 @@
+# An example moves list that can be executed by the player
 cx 2
 cx 5
 cc 6 2
