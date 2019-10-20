@@ -5,7 +5,6 @@
 This module solves FreeCell games using a variety of algorithms.
 '''
 
-
 import sys
 
 import GameFunctions as G
@@ -18,10 +17,7 @@ import StateFunctions as S
 # which are immutable tuples that package all the information in a freecell
 # game into a single snapshot
 from time import time
-
-
-
-
+import argparse
 
 def greedySearch(game, cap=-1):
     '''
@@ -573,80 +569,58 @@ def BorDFirstSearch(game, cap, useDFS=False):
             return gameOver()
 
 if __name__ == '__main__':
-    
-    # Defaults
-    gameFile = 'game.txt'
-    moveFile = 'moves.txt'
-    startFile = None
-    game = C.FreeCell()
-    searchType = 1
-    cap = 2000000
-    
-    
-    i = 1
-    while i < len(sys.argv):
-        if sys.argv[i] == '-s':
-            i += 1
-            startFile = sys.argv[i]
-        elif sys.argv[i] == '-g':
-            i += 1
-            gameFile = sys.argv[i]
-        elif sys.argv[i] == '-m':
-            i += 1
-            moveFile = sys.argv[i]
-        i += 1
-        
-    changeSettings = False
-    if changeSettings:
-        try:
-            cap = int(input('Enter a search cap (must be an int): '))
-            if cap not in range(2000001):
-                raise ValueError()
-        except:
-            print('Bad input for cap, cap will revert to 2 million')
-            cap = 2000000
-        infoStr = '''
-        Now choose a search type. Options are:
+    parser = argparse.ArgumentParser(\
+                description="This is a solver for the game FreeCell, using a" +\
+                            " variety of search algorithms to find a solution"+\
+                            " for an entered game")
+    parser.add_argument('--gameFile', '-g', default='game.txt', \
+                        help='name of file to save game to')
+    parser.add_argument('--moveFile', '-m', default='moves.txt', \
+                        help='name of file to save movelist (game solution) to')
+    parser.add_argument('--startFile', '-s', default=None, \
+                        help='name of file containing game to solve')
+    parser.add_argument('--cap', '-c', default=2000000, type=int, \
+                        help='name of file containing game to solve')
+    searchTypeStr = '''
+        Integer value representing searchtype to use.
+        Options are: 
             1 -- Greedy Best First Search (fast, not always optimal, recommended)
             2 -- A* (slower, but optimal)
             3 -- Basic Greedy Best First Search (simpler heuristic, less effective)
             4 -- Basic A* (again a simpler heuristic, might be faster)
             5 -- Breadth First Search (probably not gonna work)
             6 -- Depth First Search (also not gonna work)
-        '''
-        print(infoStr)
-        try:
-            searchType = int(input('Enter a search type: '))
-            if searchType not in range(1,7):
-                raise ValueError()
-        except:
-            print('Bad search type input, will revert to 1 -- (Greedy BFS)')
-            searchType = 1
-        
+    '''
+    parser.add_argument('--searchType', '-t', default=1, type=int, help=searchTypeStr)
+    args = parser.parse_args()
+    
+    gameFile = args.gameFile
+    moveFile = args.moveFile
+    searchType = args.searchType
+    if searchType not in range(1, 7):
+        raise ValueError("Search Type must be an integer from 1-6")
+    cap = args.cap
+    if cap not in range(2000001):
+        raise ValueError("Cap must be <= 2000000")
+    startFile = args.startFile
+    game = C.FreeCell()
     if startFile:
         try:
             game = G.loadFile(startFile)
         except IOError as e:
             print(e)
-            print('Reverting to randomly generating a game')
-            game = C.FreeCell()
+            print('Bad startFile, reverting to randomly generating a game')
     G.saveGameToFile(game, gameFile)
 
     # Select which search to run
-    if searchType == 1:
-        answerLst = greedySearch(game)#, cap)
-    elif searchType == 2:
-        answerLst = AStarSearch(game, cap)
-    elif searchType == 3:
-        answerLst = greedySearchBasic(game, cap)
-    elif searchType == 4:
-        answerLst = AStarSearchBasic(game, cap)
-    elif searchType == 5:
-        answerLst = BorDFirstSearch(game, cap)
-    else:
-        useDFS = True
+    searches = [greedySearch, AStarSearch, greedySearchBasic, AStarSearchBasic]
+    searchType -= 1 # Get 0 indexed
+    if searchType >= 4:
+        useDFS = (searchType > 4)
         answerLst = BorDFirstSearch(game, cap, useDFS)
-
+    else:
+        answerLst = searches[searchType](game, cap)
+    
     print(f'Game printed to file <{gameFile}>')
     if not answerLst:
         print(f'No move list printed')
