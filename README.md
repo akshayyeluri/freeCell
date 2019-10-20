@@ -1,5 +1,5 @@
 # freeCell
-This is both a graphical player for the game freeCell, and a solver for the game that uses a modified version of A*.
+This is both a GUI and engine for the game freeCell, and a solver for the game that uses a modified version of A*.
 I just have a few things I’d like to point out about this.
 First I’ll talk about the really cool things I tried to implement that I hope you don’t 
 miss, and then toward the bottom, I try and explain the more confusing things in my code.
